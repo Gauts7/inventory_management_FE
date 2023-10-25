@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import {
     Button,
     TextField,
@@ -40,6 +41,16 @@ function Login() {
             console.log(inputData)
 
             //make API call here
+            axios
+           .post('http://localhost:3000/dashboard', inputData)
+           .then((response) => {
+            
+              console.log(response);
+            })
+            .catch((error) => {
+            
+              console.error('An error occurred:', error);
+            });
           }
         
     }
