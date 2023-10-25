@@ -23,18 +23,23 @@ function Login() {
     const handleData =()=>{
 
     }
+
+    const submitData =()=>{
+
+    }
   return (
 
     <Box
     sx={{
-      marginTop: 8,
+      marginTop: 20,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
     }}
-  >
-    <Typography variant='h5'>LOGIN</Typography>
-      <Box component="form" noValidate sx={{ mt: 1 }}>
+  ><Typography variant='h4' sx={{mb:3}} >LOGIN</Typography>
+    <Paper elevation={3} sx={{p:4}}>
+    
+      <Box component="form"  sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -44,6 +49,7 @@ function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={handleData}
             />
             <TextField
               margin="normal"
@@ -54,16 +60,19 @@ function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={handleData}
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={submitData}
             >
               Sign In
             </Button>
             </Box>
+            </Paper>
     </Box>
     )
 }
