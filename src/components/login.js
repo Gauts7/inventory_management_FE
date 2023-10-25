@@ -33,7 +33,7 @@ function Login() {
       alignItems: 'center',
     }}
   >
-    <Typography>LOGIN</Typography>
+    <Typography variant='h5'>LOGIN</Typography>
       <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
