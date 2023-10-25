@@ -61,7 +61,7 @@ function Login() {
               required
               fullWidth
               value={inputData.id}
-              label="Store_is/Employee_id"
+              label="Store_id/Employee_id"
               autoFocus
               onChange={handleData}
               name="id"
