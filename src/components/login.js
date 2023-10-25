@@ -13,7 +13,7 @@ import {
     Box
 } from '@mui/material'
 
-import { LockOpenIcon } from '@mui/icons-material'
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { useState } from 'react';
 
 function Login() {
@@ -42,10 +42,9 @@ function Login() {
 
             //make API call here
             axios
-           .post('http://localhost:3000/dashboard', inputData)
-           .then((response) => {
-            
-              console.log(response);
+            .post('https://jsonplaceholder.typicode.com/posts', inputData)
+            .then((response) => {
+              console.log(response.data); // Log the response data
             })
             .catch((error) => {
             
