@@ -24,9 +24,24 @@ function Login() {
         setinputData({...inputData,[e.target.name]:e.target.value})
     }
 
+    
     const submitData =(e)=>{
         e.preventDefault();
-        console.log(inputData)
+
+        if (inputData.password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+          } else if (!/[a-z]/.test(inputData.password)) {
+            alert("Password must contain at least one lowercase letter.");
+          } else if (!/[A-Z]/.test(inputData.password)) {
+            alert("Password must contain at least one uppercase letter.");
+          } else if (!/[^a-zA-Z0-9]/.test(inputData.password)) {
+            alert("Password must contain at least one special character.");
+          } else {
+            console.log(inputData)
+
+            //make API call here
+          }
+        
     }
   return (
 
