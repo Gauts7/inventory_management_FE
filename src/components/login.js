@@ -17,15 +17,16 @@ import { useState } from 'react';
 
 function Login() {
 
-    const userData={id:"",password:""};
+    const userData={id:"", password:""};
     const [inputData,setinputData]=useState(userData);
 
-    const handleData =()=>{
-
+    const handleData =(e)=>{
+        setinputData({...inputData,[e.target.name]:e.target.value})
     }
 
-    const submitData =()=>{
-
+    const submitData =(e)=>{
+        e.preventDefault();
+        console.log(inputData)
     }
   return (
 
@@ -44,22 +45,24 @@ function Login() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              value={inputData.id}
+              label="Store_is/Employee_id"
               autoFocus
               onChange={handleData}
+              name="id"
+              type="text"
+              id="id"
             />
             <TextField
               margin="normal"
               required
               fullWidth
+              value={inputData.password}
               name="password"
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              
               onChange={handleData}
             />
             <Button
